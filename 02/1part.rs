@@ -20,9 +20,7 @@ fn get_numbers() -> Vec<i32> {
     vec
 }
 
-fn main() {
-    let mut vec = get_numbers();
-
+fn interpret(mut vec: Vec<i32>) -> i32 {
     let mut i = 0;
     while i < vec.len() {
         let opcode = vec[i];
@@ -46,5 +44,11 @@ fn main() {
         }
         i += 4;
     }
-    println!("{}", &vec[0]);
+    vec[0]
+}
+
+fn main() {
+    let vec = get_numbers();
+
+    println!("{}", interpret(vec));
 }

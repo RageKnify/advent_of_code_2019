@@ -133,14 +133,12 @@ fn main() {
             }
         }
     }
-    let mut min_p = &vec[0];
-    let mut min = min_p.manhattan();
+    let mut min = vec[0].manhattan();
     for curr_p in &vec {
         let curr = curr_p.manhattan();
         if curr < min {
             min = curr;
-            min_p = curr_p;
         }
     }
-    println!("{}, {:?}", min, min_p);
+    println!("{}", min);
 }
